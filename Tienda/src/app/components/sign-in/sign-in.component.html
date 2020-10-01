@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
+  </head>
+  <body>
+
+      <form (ngSubmit)="authService.SignIn(userName.value, userPassword.value)" class="login-form">
+        <h1>Login</h1>
+
+        <div class="txtb form-group">
+          <input type="text" class="form-control" placeholder="Email" #userName required >
+        </div>
+
+        <div class="txtb form-group">
+          <input type="password" class="form-control" placeholder="Password" #userPassword required>
+        </div>
+
+        <input type="submit" class="logbtn" value="Log in">
+
+         <!-- Calling GoogleAuth Api from AuthService -->
+
+         <button type="button" class="logbtnG" (click)="authService.GoogleAuth()">
+                 <i class="fab fa-google-plus-g"></i>
+                 Log in with Google
+        </button>  
+
+
+        <div class="bottom-text redirectToLogin">
+          Don't have account? <a routerLink="/register-user">Sign up</a>
+        </div>
+
+      </form>
+
+      <script type="text/javascript">
+      $(".txtb input").on("focus",function(){
+        $(this).addClass("focus");
+      });
+
+      $(".txtb input").on("blur",function(){
+        if($(this).val() == "")
+        $(this).removeClass("focus");
+      });
+
+      </script>
+
+
+  </body>
+</html>
