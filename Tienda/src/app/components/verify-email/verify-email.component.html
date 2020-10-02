@@ -1,29 +1,39 @@
-<p>verify-email works!</p>
 
-<div class="displayTable">
-    <div class="displayTableCell">
-  
-      <div class="authBlock">
-        <h3>Thank You for Registering</h3>
-  
+
+<div class="contenido"> 
+
+  <div class="row d-flex justify-content-center ">
+    <div class="col-6">
+      <div class="jumbotron">
+
+        <h1 class="display-4 text-center">Thank You for Registering</h1>
+
         <div class="formGroup" *ngIf="authService.userData as user">
           <p class="text-center">We have sent a confirmation email to <strong>{{user.email}}</strong>.</p>
           <p class="text-center">Please check your email and click on the link to verfiy your email address.</p>
         </div>
-        
-        <!-- Calling SendVerificationMail() method using authService Api -->
+
+        <hr class="my-2">
+
+          <!-- Calling SendVerificationMail() method using authService Api -->
         <div class="formGroup">
           <button type="button" class="btn btnPrimary" (click)="authService.SendVerificationMail()">
             <i class="fas fa-redo-alt"></i>
-            Resend Verification Email
+            <strong class="ml-2">Resend Verification Email</strong> 
           </button>
         </div>
-  
+
+        <hr class="my-2">
+
+
+        <div class="bottom-text redirectToLogin">
+          Go back to? <a routerLink="/register-user">Sign up</a>
+        </div>
+
       </div>
-  
-      <div class="redirectToLogin">
-        <span>Go back to?<span class="redirect" routerLink="/sign-in"> Sign in</span></span>
-      </div>
-  
+
     </div>
+
   </div>
+
+</div>
