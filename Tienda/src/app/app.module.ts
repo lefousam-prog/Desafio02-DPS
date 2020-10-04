@@ -29,6 +29,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //notificaciones
 import { ToastrModule } from 'ngx-toastr';
 
+//Form app
+import { ShoppingHistoryComponent } from './components/shopping-history/shopping-history.component';
+import { ShoppingListComponent } from './components/shopping-history/shopping-list/shopping-list.component';
+import { ShoppingComponent } from './components/shopping-history/shopping/shopping.component';
+import { ShoppingService } from './services/shopping.service';
+import { ProductsComponent } from './components/products/products.component';
+import { ProductsListComponent } from './components/products/products-list/products-list.component';
+import { ProductComponent } from './components/products/product/product.component';
+import { ProductsService } from './services/products.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +46,13 @@ import { ToastrModule } from 'ngx-toastr';
     SignInComponent,
     SignUpComponent,
     ForgotPasswordComponent,
-    VerifyEmailComponent
+    VerifyEmailComponent,
+    ShoppingHistoryComponent,
+    ShoppingListComponent,
+    ShoppingComponent,
+    ProductsComponent,
+    ProductsListComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +65,7 @@ import { ToastrModule } from 'ngx-toastr';
     BrowserAnimationsModule,
     ToastrModule.forRoot()
   ],
-  providers: [AuthService],
+  providers: [AuthService, ShoppingService, ProductsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

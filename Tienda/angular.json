@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Tienda"
+    }
+  },
+  "defaultProject": "Tienda",
+  "cli": {
+    "analytics": false
+  }
 }

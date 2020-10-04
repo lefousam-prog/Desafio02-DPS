@@ -1,0 +1,58 @@
+<div class="card">
+    <div class="card-body">
+        
+        <h2>Registrar una compra</h2>
+        <br>
+
+        <form #shoppingForm="ngForm" (ngSubmit)="onSubmit(shoppingForm)">
+
+            <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="shoppingService.selectedShopping.$key">
+
+            <div class="form-group">
+                <input type="text" class="form-control" name="name_client" #name_client="ngModel" 
+                    [(ngModel)]="shoppingService.selectedShopping.name_client" placeholder="Nombre del cliente" required>
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control" name="dui_client" #dui_client="ngModel" 
+                    [(ngModel)]="shoppingService.selectedShopping.dui_client" placeholder="Dui del cliente" (change)="cambio()" required>
+            </div>
+
+            <!--div class="form-group">
+                <input type="text" class="form-control" name="code_product" #code_product="ngModel" 
+                    [(ngModel)]="shoppingService.selectedShopping.code_product" placeholder="Código del producto">
+            </div-->
+
+            <!--div class="form-group">
+                <input type="text" class="form-control" name="description_product" #description_product="ngModel" 
+                    [(ngModel)]="shoppingService.selectedShopping.description_product" placeholder="Descripción del producto">
+            </div-->
+            
+            <input type="hidden" name="code_product" #code_product="ngModel" [(ngModel)]="shoppingService.selectedShopping.code_product">
+
+            <div class="form-group">
+                <select class="form-control" id="description_product" name="description_product" #description_product="ngModel" [(ngModel)]="shoppingService.selectedShopping.description_product" (change)="cambio()" required> 
+                    <option value="none" selected>Seleccionar un producto</option>
+                    <option *ngFor="let products of productsList" [value]="products.description_product">{{products.description_product}}</option>
+                </select>
+            </div>
+            
+
+            <div class="form-group">
+                <input type="text" class="form-control" name="price" #price="ngModel" 
+                    [(ngModel)]="shoppingService.selectedShopping.price" placeholder="Precio (Incluye las ofertas)" readonly required>
+            </div>
+
+            <div class="form-group">
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-plus-circle"></i> Agregar/Modificar registro de compra
+                </button> &nbsp;
+                <button class="btn btn-secondary" type="reset" (click)="resetForm(shoppingForm)">
+                    <i class="fas fa-sync-alt"></i> Limpiar el formulario
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+</div>

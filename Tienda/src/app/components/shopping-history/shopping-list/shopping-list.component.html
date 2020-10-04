@@ -1,0 +1,38 @@
+<div class="card">
+    <div class="card-body">
+        
+        <h2>Historial de compras</h2>
+
+        <table class="table table-responsive table-hover"> 
+            <thead>
+                <tr>
+                    <td>ID del registro</td>
+                    <td>Nombre del cliente</td>
+                    <td>Dui del cliente</td>
+                    <td>Código del producto</td>
+                    <td>Descripción del producto</td>
+                    <td>Precio (Incluye descuento)</td>
+                    <td>Acciones sobre el registro</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let shopping of shoppingList">
+                    <td>{{shopping.$key}}</td>
+                    <td>{{shopping.name_client}}</td>
+                    <td>{{shopping.dui_client}}</td>
+                    <td>{{shopping.code_product}}</td>
+                    <td>{{shopping.description_product}}</td>
+                    <td>{{shopping.price}}</td>
+                    <td>
+                        <a class="btn btn-secondary text-white" (click)="onEdit(shopping)">
+                            <i class="far fa-edit"></i>
+                        </a> &nbsp;
+                        <a class="btn btn-danger text-white" (click)="onDelete(shopping.$key)">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
