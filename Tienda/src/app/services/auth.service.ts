@@ -22,7 +22,7 @@ export class AuthService {
 
      /* Guardar datos de usuario en almacenamiento local cuando
     iniciado sesión y configurando nulo al cerrar sesión*/
-    this.afAuth.authState.subscribe(user => {
+    this.afAuth.onAuthStateChanged(user => {
       if (user) {
         this.userData = user;
         localStorage.setItem('user', JSON.stringify(this.userData));
@@ -80,7 +80,7 @@ export class AuthService {
   // el correo electrónico está verificado
   get isLoggedIn(): boolean {
     const user = JSON.parse(localStorage.getItem('user'));
-    return (user !== null && user.emailVerified !== false) ? true : true;
+    return (user !== null && user.emailVerified !== false) ? true : false;
   }
 
 
