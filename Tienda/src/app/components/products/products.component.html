@@ -1,10 +1,16 @@
-<nav class="navbar navbar-expand-sm bg-light">
+<nav class="navbar navbar-expand-sm bg-dark">
     <div class="container">
-      <a routerLink="/dashboard" class="navbar-brand">Inicio</a>
+      <a class="navbar-brand" routerLink="/dashboard">
+        <img src="../../../assets/icono.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+        Tienda Don Diego
+      </a>
       <ul class="nav navbar-nav" routerLinkActive>
         <li class="nav-item"><a class="nav-link" routerLink="/shopping">Registro de compras</a></li>
         <li class="nav-item"><a class="nav-link" routerLink="/products">Registro de productos</a></li>
-        <li class="nav-item"><a class="nav-link" (click)="authService.SignOut()"><i class="fas fa-sign-out-alt"></i>Log out</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/buscar-registro">Buscar registros</a></li>
+        <li class="nav-item">
+          <button type="button" class="btn btn-primary  " (click)="authService.SignOut()">Cerrar Sesión</button>
+        </li>
       </ul>
     </div>
   </nav>

@@ -2,28 +2,28 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Sign up</title>
+    <title>Registro</title>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
   </head>
   <body>
 
       <form (ngSubmit)="authService.SignUp(userEmail.value, userPwd.value)" class="login-form">
-        <h1>Sign up</h1>
+        <h1>Registrarse</h1>
 
         <div class="txtb form-group">
-          <input type="text" class="form-control" placeholder="Email Address" #userEmail required >
+          <input type="text" class="form-control" placeholder="Correo" #userEmail required >
         </div>
 
         <div class="txtb form-group">
-          <input type="password" class="form-control" placeholder="Password" #userPwd required>
+          <input type="password" class="form-control" placeholder="Contraseña" #userPwd required>
         </div>
 
-        <input type="submit" class="logbtn" value="Sign up">
+        <input type="submit" class="logbtn" value="Registrarse">
 
 
         <div class="bottom-text redirectToLogin">
-          Already have an account? <a routerLink="/sign-in">Log In</a>
+          ¿Ya posee una cuenta? <a routerLink="/sign-in">Ingresar</a>
         </div>
 
 

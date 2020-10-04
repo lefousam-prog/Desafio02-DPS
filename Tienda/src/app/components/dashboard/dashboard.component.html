@@ -1,12 +1,78 @@
 <body>
-  <nav class="navbar navbar-expand-sm bg-light">
+  <nav class="navbar navbar-expand-sm bg-dark" >
     <div class="container">
-      <a routerLink="/dashboard" class="navbar-brand">Inicio</a>
+
+      <a class="navbar-brand" routerLink="/dashboard">
+        <img src="../../../assets/icono.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+        Tienda Don Diego
+      </a>
+
       <ul class="nav navbar-nav" routerLinkActive>
         <li class="nav-item"><a class="nav-link" routerLink="/shopping">Registro de compras</a></li>
         <li class="nav-item"><a class="nav-link" routerLink="/products">Registro de productos</a></li>
-        <li class="nav-item"><a class="nav-link" (click)="authService.SignOut()"><i class="fas fa-sign-out-alt"></i>Log out</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/buscar-registro">Buscar registros</a></li>
+        <li class="nav-item">          
+          <button type="button" class="btn btn-primary  " (click)="authService.SignOut()">Cerrar Sesión</button>
+        </li>
       </ul>
     </div>
   </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+  
+      <nav class="col-md-2 d-md-block datos sidebar">
+        <div class="sidebar-sticky">
+          <h3 class="text-center mt-2">Usuario</h3>
+          <hr>
+          <div  *ngIf="authService.userData as user">
+
+
+                <img  class=" ml-4  img-thumbnail rounded-circle" src="{{(user.photoURL) ? user.photoURL : '/assets/dummy-user.png'}}"
+                  alt="{{user.displayName}}" width="150" height="150">
+                  
+
+                  <p class="text-center"><strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></p>
+                  <hr>
+                  <p class="text-center">Correo: <strong>{{user.email}}</strong></p>
+                  <p class="text-center">Correo verificado: <strong>{{user.emailVerified}}</strong></p>
+                  <hr>
+          </div>
+        </div>
+      </nav>
+  
+      <!-- Main content -->
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+        <div class="inner-adjust">
+  
+          <div class="pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2 text-center">TIENDA DON DIEGO</h1>
+          </div>
+          <!-- Show user data when logged in -->
+          <div class="row" *ngIf="authService.userData as user">
+            <div class="col-md-12">
+              <div class="media">
+                <img class="align-self-start mr-5 img-thumbnail " src="../../../assets/tienda5.jpg"
+                  alt="Tienda Don Diego" width="550" height="550">
+                <div class="media-body">
+                  <div class="card">
+                    <div class="card-header text-center">
+                      HISTORIA
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">El sueño de una lejana brisa</h5>
+                      <p class="card-text">Todo comenzo en un lejano diciembre de un ya olvidado 1997, mi padre con el dinero de su herencia, puso la primera piedra de una pequeña tiendita en las afueras de soyapango centro, sin muchos recursos pero con mucho entusiasmo, compro sus primeros productos, y emprendio aquella pequeña idea que habia concretado cuando observaba el cielo de un diciembre helado junto a su esposa. Las personas poco a poco comenzaron a llegar, mi padre Don Diego se gano la confianza de la gente por su trato y amabilidad, a la semana ya era conocido en toda su colonia y su nombre se expandio y crecio como un simbolo de confiabilidad. Pasaron los años, se expandio, trazo la linea y su barco recorrio otros municipios, hasta llegar adonde se encuentra ahora, heredando no un negocio, heredando aquella ilusion con la que comenzo, unida a ese hermoso recuerdo de un diciembre con mucho frio, un diciembre de esperanza...</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+        </div>
+      </main>
+  
+    </div>
+  </div>
+
 </body>

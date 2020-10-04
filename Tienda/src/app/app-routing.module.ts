@@ -11,6 +11,7 @@ import { AuthGuard } from "./guard/auth.guard";
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 import { ShoppingHistoryComponent } from './components/shopping-history/shopping-history.component';
 import { ProductsComponent } from './components/products/products.component';
+import { BuscarRegistroComponent } from './components/buscar-registro/buscar-registro.component';
 
 const routes: Routes = [
  { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
@@ -19,8 +20,9 @@ const routes: Routes = [
  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
  { path: 'forgot-password', component: ForgotPasswordComponent },
  { path: 'verify-email-address', component: VerifyEmailComponent },
- { path: 'shopping', component: ShoppingHistoryComponent },
- { path: 'products', component: ProductsComponent }
+ { path: 'shopping', component: ShoppingHistoryComponent, canActivate: [AuthGuard] },
+ { path: 'products', component: ProductsComponent, canActivate: [AuthGuard] },
+ { path: 'buscar-registro', component: BuscarRegistroComponent, canActivate: [AuthGuard] }
 ];
 
 

@@ -12,25 +12,25 @@
         <h1>Login</h1>
 
         <div class="txtb form-group">
-          <input type="text" class="form-control" placeholder="Email" #userName required >
+          <input type="text" class="form-control" placeholder="Correo" #userName required >
         </div>
 
         <div class="txtb form-group">
-          <input type="password" class="form-control" placeholder="Password" #userPassword required>
+          <input type="password" class="form-control" placeholder="Contraseña" #userPassword required>
         </div>
 
-        <input type="submit" class="logbtn" value="Log in">
+        <input type="submit" class="logbtn" value="Ingresar">
 
          <!-- Calling GoogleAuth Api from AuthService -->
 
          <button type="button" class="logbtnG" (click)="authService.GoogleAuth()">
                  <i class="fab fa-google-plus-g"></i>
-                 Log in with Google
+                 Ingresar con Google
         </button>  
 
 
         <div class="bottom-text redirectToLogin">
-          Don't have account? <a routerLink="/register-user">Sign up</a>
+          ¿No posee una cuenta? <a routerLink="/register-user">Registrarse</a>
         </div>
 
       </form>

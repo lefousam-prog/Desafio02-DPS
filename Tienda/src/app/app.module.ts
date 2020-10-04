@@ -38,6 +38,7 @@ import { ProductsComponent } from './components/products/products.component';
 import { ProductsListComponent } from './components/products/products-list/products-list.component';
 import { ProductComponent } from './components/products/product/product.component';
 import { ProductsService } from './services/products.service';
+import { BuscarRegistroComponent } from './components/buscar-registro/buscar-registro.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { ProductsService } from './services/products.service';
     ShoppingComponent,
     ProductsComponent,
     ProductsListComponent,
-    ProductComponent
+    ProductComponent,
+    BuscarRegistroComponent
   ],
   imports: [
     BrowserModule,
