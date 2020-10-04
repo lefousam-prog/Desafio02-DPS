@@ -1,7 +1,12 @@
-<p>dashboard works!</p>
-            <!-- Calling SignOut() Api from AuthService -->
-            <li class="nav-item">
-                <a class="nav-link" (click)="authService.SignOut()">
-                  <i class="fas fa-sign-out-alt"></i>Log out
-                </a>
-              </li>
+<body>
+  <nav class="navbar navbar-expand-sm bg-light">
+    <div class="container">
+      <a routerLink="/dashboard" class="navbar-brand">Inicio</a>
+      <ul class="nav navbar-nav" routerLinkActive>
+        <li class="nav-item"><a class="nav-link" routerLink="/shopping">Registro de compras</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/products">Registro de productos</a></li>
+        <li class="nav-item"><a class="nav-link" (click)="authService.SignOut()"><i class="fas fa-sign-out-alt"></i>Log out</a></li>
+      </ul>
+    </div>
+  </nav>
+</body>

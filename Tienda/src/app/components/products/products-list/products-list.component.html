@@ -1,9 +1,18 @@
-<div class="card">
+<div class="card d-flex justify-content-center">
     <div class="card-body">
         
-        <h6>Registro de productos</h6>
+        <h2>Registro de productos</h2>
 
         <table class="table table-responsive table-hover"> 
+            <thead>
+                <tr>
+                    <td>ID del registro</td>
+                    <td>Código del producto</td>
+                    <td>Descripción del producto</td>
+                    <td>Precio del producto</td>
+                    <td>Acciones sobre el registro</td>
+                </tr>
+            </thead>
             <tbody>
                 <tr *ngFor="let products of productsList">
                     <td>{{products.$key}}</td>

@@ -1,6 +1,7 @@
 <div class="card">
     <div class="card-body">
-
+        <h2>Registrar un producto</h2>
+        <br>
         <form #productsForm="ngForm" (ngSubmit)="onSubmit(productsForm)">
 
             <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="productsService.selectedProducts.$key">
