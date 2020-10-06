@@ -16,3 +16,93 @@
       </ul>
     </div>
   </nav>
+
+  <div class="container">
+    <div class="card">
+      <div class="card-header">
+        <div class="card d-flex justify-content-center">
+          <div class="card-body">
+            <h2>Busqueda de registros</h2>
+
+            <form #searchForm="ngForm" (ngSubmit)="onSubmit(searchForm)">
+              <div class="form-group">
+                <label>Seleccione el filtro de busqueda: &nbsp;</label>
+                <select class="form-control" id="optionsearch" name="ptionsearch" [(ngModel)]="optionsearch" required>
+                  <option [value]="0">ID del registro (compras o productos)</option>
+                  <option [value]="1">Nombre del cliente</option>
+                  <option [value]="2">Dui del cliente</option>
+                  <option [value]="3">Código del producto</option>
+                  <option [value]="4">Descripción del producto</option>
+                  <option [value]="5">Precio</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>Ingrese la palabra a buscar: &nbsp;</label>
+                <input type="text" class="form-control" name="keyword" 
+                    [(ngModel)]="keyword" placeholder="Palabra clave" required>
+              </div>
+
+              <div class="form-group">
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-plus-circle"></i> Realizar la busqueda
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card d-flex justify-content-center">
+          <div class="card-body">
+
+            <h2>Resultados de la busqueda en los registros de productos</h2>
+            <table class="table table-responsive table-hover"> 
+              <thead>
+                  <tr>
+                      <td>ID del registro</td>
+                      <td>Código del producto</td>
+                      <td>Descripción del producto</td>
+                      <td>Precio del producto</td>
+                  </tr>
+              </thead>
+              <tbody id="registrosP">
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card d-flex justify-content-center">
+          <div class="card-body">
+            <h3>Resultados de la busqueda en los registros de compras</h3>
+
+            <table class="table table-responsive table-hover"> 
+              <thead>
+                  <tr>
+                      <td>ID del registro</td>
+                      <td>Nombre del cliente</td>
+                      <td>Dui del cliente</td>
+                      <td>Código del producto</td>
+                      <td>Descripción del producto</td>
+                      <td>Precio (Incluye descuento)</td>
+                  </tr>
+              </thead>
+              <tbody id="registrosS">
+              </tbody>
+  
+              <div style="display: none" id="impresion">
+                  <h2>Ticket de compra de producto</h2>
+                  
+              </div>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

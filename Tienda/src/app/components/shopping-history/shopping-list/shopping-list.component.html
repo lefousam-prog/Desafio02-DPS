@@ -30,9 +30,15 @@
                         <a class="btn btn-danger text-white" (click)="onDelete(shopping.$key)">
                             <i class="fas fa-trash-alt"></i>
                         </a>
+                        <a class="btn btn-info" (click)="generarTicket(shopping)"><i class="fas fa-info"></i> Generar ticket  </a>
                     </td>
                 </tr>
             </tbody>
+
+            <div style="display: none" id="impresion">
+                <h2>Ticket de compra de producto</h2>
+                
+            </div>
         </table>
     </div>
 </div>
