@@ -8,21 +8,25 @@
 
             <div class="form-group">
                 <input type="text" class="form-control" name="code_product" #code_product="ngModel" 
-                    [(ngModel)]="productsService.selectedProducts.code_product" placeholder="Código del producto" required>
+                    [(ngModel)]="productsService.selectedProducts.code_product" placeholder="Código del producto" pattern="[A-Z]{3}[0-9]{3}" required>
+                    <br/>
+                <label [hidden]="code_product.valid" class="alert alert-danger">El código del producto debe de tener un formato como el siguiente: AAA000</label>
             </div>
 
             <div class="form-group">
                 <input type="text" class="form-control" name="description_product" #description_product="ngModel" 
-                    [(ngModel)]="productsService.selectedProducts.description_product" placeholder="Descripción del producto" required>
+                    [(ngModel)]="productsService.selectedProducts.description_product" placeholder="Descripción del producto" minlength="1" required>
+                    <br/>
+                <label [hidden]="description_product.valid" class="alert alert-danger">El campo no debe de estar vacio.</label>
             </div>
 
             <div class="form-group">
-                <input type="text" class="form-control" name="price" #price="ngModel" 
-                    [(ngModel)]="productsService.selectedProducts.price" placeholder="Precio del producto" required>
+                <input type="number" class="form-control" name="price" #price="ngModel" 
+                    [(ngModel)]="productsService.selectedProducts.price" placeholder="Precio del producto" min="0" required>
             </div>
 
             <div class="form-group">
-                <button class="btn btn-primary" type="submit">
+                <button class="btn btn-primary" [disabled]="!productsForm.valid" type="submit">
                     <i class="fas fa-plus-circle"></i> Agregar/Modificar producto
                 </button>&nbsp;
                 <button class="btn btn-secondary" type="reset" (click)="resetForm(productsForm)">
